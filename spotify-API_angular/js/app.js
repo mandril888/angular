@@ -24,7 +24,7 @@ angular.module("mySpotifyApp",[])
 				var urlAlbumLast = "/albums";
 				$rootScope.albums = "";
 
-			$scope.change = function() {
+				$scope.change = function() {
 					// console.log('ctrl 2');
 					var url  = urlAlbumFirst + $scope.artistId + urlAlbumLast;
 					$http.get(url)
@@ -42,14 +42,14 @@ angular.module("mySpotifyApp",[])
 				var urlSongLast = "/tracks";
 				$rootScope.songs = "";
 
-			$scope.change2 = function() {
+				$scope.change = function() {
 					// console.log('ctrl 3');
 					var url  = urlSongFirst + $scope.albumId + urlSongLast;
 					$http.get(url)
 						.then(function( dataFromApi3 ) {
 							// console.log( dataFromApi3 );
 							$rootScope.songs = dataFromApi3.data.items;
-							console.log( $rootScope.songs );
+							// console.log( $rootScope.songs );
 						})
 				}
 			})
