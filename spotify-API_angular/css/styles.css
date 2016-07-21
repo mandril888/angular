@@ -1,0 +1,63 @@
+html {
+	background: url(https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w300);
+	font-size: 18px;
+}
+
+body {
+	width: 70%;
+	margin: 0 auto;
+	padding: 10%;
+}
+
+h2 {
+	text-align: center;
+	border-bottom: 3px solid white;
+	margin: 4% 15%;
+}
+
+fieldset {
+	border-radius: 5px;
+	margin-top: 4%;
+}
+
+button {
+	border-radius: 5px;
+	color: white;
+	background: #1ED760;
+	padding: 6px;
+	margin: 4px;
+}
+
+input, select {
+	border-radius: 5px;
+	color: white;
+	background: rgba(18,18,18,0.9);
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	font-size: 1.1em;
+	color: #1ED760;	
+}
+a:visited {
+	color: #1ED760;	
+}
+
+
+.container {
+	background: rgba(18,18,18,0.9);
+	color: white;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 3%;
+	-webkit-box-shadow: 0px 0px 46px 13px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 46px 13px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 46px 13px rgba(0,0,0,0.75);
+}
+
+.hidden {
+	display: none;
+}
