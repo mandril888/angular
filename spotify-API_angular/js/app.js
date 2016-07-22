@@ -16,11 +16,6 @@ angular.module("mySpotifyApp",[])
 							$scope.artists = dataFromApi.data.artists.items;
 							// console.log( $scope.artists );
 						})
-
-					// $scope.myClass = [];
-				 //    $scope.removeClass = function() {
-				 //      $scope.myClass.pop('hidden');
-				 //    }
 				}
 			})
 
