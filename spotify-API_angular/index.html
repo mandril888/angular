@@ -17,21 +17,21 @@
 			<button >Search</button>
 		</fieldset>
 
-		<fieldset ng-controller="searchAlbum">
+		<fieldset ng-controller="searchAlbum" ng-show="artists">
 			<legend>Select an Artist</legend>
 			<select name="" id="" ng-model="artistId" ng-change="change()">
 				<option value="{{ artist.id }}" ng-repeat="artist in artists">{{ artist.name }}</option>
 			</select>
 		</fieldset>
 
-		<fieldset ng-controller="searchSongs">
+		<fieldset ng-controller="searchSongs" ng-show="albums">
 			<legend>Select an Album</legend>
 			<select name="" id="" ng-model="albumId" ng-change="change()">
 				<option value="{{ album.id }}" ng-repeat="album in albums">{{ album.name }}</option>
 			</select>
 		</fieldset>
 
-		<fieldset>
+		<fieldset ng-show="songs">
 			<legend>Select a Song</legend>
 			<ol name="" id="">
 				<li ng-repeat="song in songs"><a href="{{ song.preview_url }}" target="_blank">{{ song.name }}</a></li>

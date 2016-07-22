@@ -7,6 +7,7 @@ angular.module("mySpotifyApp",[])
 				$scope.artists = "";
 
 				$scope.submit = function() {
+
 					// console.log('ctrl 1');
 					var url  = urlArtist + $scope.searchArtist
 					$http.get( url )
@@ -15,6 +16,11 @@ angular.module("mySpotifyApp",[])
 							$scope.artists = dataFromApi.data.artists.items;
 							// console.log( $scope.artists );
 						})
+
+					// $scope.myClass = [];
+				 //    $scope.removeClass = function() {
+				 //      $scope.myClass.pop('hidden');
+				 //    }
 				}
 			})
 
