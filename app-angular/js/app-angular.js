@@ -1,0 +1,1 @@
+angular.module( 'app-angular', [ 'ngRoute', 'allCtrls', 'configRouting'])
