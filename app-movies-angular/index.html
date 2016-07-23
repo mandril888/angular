@@ -16,16 +16,25 @@
 		<nav>
 			<div class="container">
 				<ul>
-					<li ng-class="{ 'active' : $root.section === 'MovieCollection' }"><a href="/#/movieCollection">Movie Collection</a></li>
-					<li ng-class="{ 'active' : $root.section === 'PopularMovies' }"><a href="/#/popularMovies">Popular Movies</a></li>
-					<li ng-class="{ 'active' : $root.section === 'UpcomingMovies' }"><a href="/#/upcomingMovies">Upcoming Movies</a></li>
-					<li ng-class="{ 'active' : $root.section === 'NowPlayingMovies' }"><a href="/#/nowPlayingMovies">Now Playing Movies</a></li>
-					<li ng-class="{ 'active' : $root.section === 'TopRattedMovies' }"><a href="/#/topRattedMovies">Top Ratted Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Movie Collection' }"><a href="/#/movieCollection">Movie Collection</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Popular Movies' }"><a href="/#/popularMovies">Popular Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Upcoming Movies' }"><a href="/#/upcomingMovies">Upcoming Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Now Playing Movies' }"><a href="/#/nowPlayingMovies">Now Playing Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Top Ratted Movies' }"><a href="/#/topRattedMovies">Top Ratted Movies</a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
+	<h2> {{ section }} </h2>
+
+	<div class="col-sm-6 col-sm-offset-3 input-group">
+    	<input type="text" class="form-control" placeholder="Search for..." ng-model="searchMovie">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+		</span>
+    </div>
+    
 
 	<div ng-view></div>
 
@@ -34,11 +43,11 @@
 		<nav>
 			<div class="container">
 				<ul>
-					<li ng-class="{ 'active' : $root.section === 'MovieCollection' }"><a href="/#/movieCollection">Movie Collection</a></li>
-					<li ng-class="{ 'active' : $root.section === 'PopularMovies' }"><a href="/#/popularMovies">Popular Movies</a></li>
-					<li ng-class="{ 'active' : $root.section === 'UpcomingMovies' }"><a href="/#/upcomingMovies">Upcoming Movies</a></li>
-					<li ng-class="{ 'active' : $root.section === 'NowPlayingMovies' }"><a href="/#/nowPlayingMovies">Now Playing Movies</a></li>
-					<li ng-class="{ 'active' : $root.section === 'TopRattedMovies' }"><a href="/#/topRattedMovies">Top Ratted Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Movie Collection' }"><a href="/#/movieCollection">Movie Collection</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Popular Movies' }"><a href="/#/popularMovies">Popular Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Upcoming Movies' }"><a href="/#/upcomingMovies">Upcoming Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Now Playing Movies' }"><a href="/#/nowPlayingMovies">Now Playing Movies</a></li>
+					<li ng-class="{ 'active' : $root.section === 'Top Ratted Movies' }"><a href="/#/topRattedMovies">Top Ratted Movies</a></li>
 				</ul>
 			</div>
 		</nav>

@@ -10,10 +10,12 @@ header, footer {
 
 h2 {
 	text-align: center;
+	margin: 25px;
 }
 
 img {
 	width: 200px;
+	margin-top: 20px;
 }
 
 ul {
@@ -24,6 +26,10 @@ ul {
 li {
 	list-style: none;
 	display: inline-block;
+}
+
+p {
+	margin: 10px 0;
 }
 
 a {
@@ -47,7 +53,7 @@ a:hover {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 50px;
 }
 
 .highlighted { background: yellow }

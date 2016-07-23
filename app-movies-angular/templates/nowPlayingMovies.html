@@ -1,8 +1,12 @@
 
 <div class="container">
-
-	<h2>nowPlayingMovies</h2>
-
-	<p>baronet pseudochromia colbertine phaenogenetic Branchiopoda octocoralline driblet vesbite overliberally lawyership Chilliwack rache efficaciously anamorphism unmelancholy irritativeness allelotropism postscalenus chordacentrum infelonious beala uncategorized equidivision resignatary</p>
+	
+	<div class="imgDiv">
+		<div ng-repeat="movies in nowPlayingMovies | filter : {original_title : searchMovie} ">
+			<img src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path }}" alt="">
+			<strong><p ng-bind-html="movies.original_title | highlight:searchMovie">{{ movies.original_title }}</p></strong>
+			<p>{{ movies.release_date }}</p>
+		</div>
+	</div>
 
 </div>
