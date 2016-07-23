@@ -1,8 +1,21 @@
 
 <div class="container">
 
-	<h2>upcomingMovies</h2>
+	<h2>Upcoming Movies</h2>
 
-	<p>subget impersuasibly isopectic booting relive reinfliction entomophthorous ploddingness hooktip escheatment ichthyotoxin starshoot barless unfur torminous larbolins hyperisotonic campanological peripterous carbomethoxy nonpresidential yaw carbonuria prepronounce</p>
+	<div class="col-sm-6 col-sm-offset-3 input-group">
+    	<input type="text" class="form-control" placeholder="Search for..." ng-model="searchMovie">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+		</span>
+    </div>
+	
+	<div class="imgDiv">
+		<div ng-repeat="movies in upcomingMovies | filter : {original_title:searchMovie}" >
+			<img src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path }}" alt="">
+			<p ng-bind-html="movies.original_title | highlight:searchMovie">{{ movies.original_title }}</p>
+			<p>{{ movies.release_date }}</p>
+		</div>
+	</div>
 
 </div>

@@ -1,7 +1,19 @@
+* {
+	transition: all 1s ease;
+}
+
 header, footer {
 	background: black;
 	color: white;
 	padding: 15px;
+}
+
+h2 {
+	text-align: center;
+}
+
+img {
+	width: 200px;
 }
 
 ul {
@@ -30,3 +42,12 @@ a:hover {
 	text-decoration:none;
 }
 
+.imgDiv {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.highlighted { background: yellow }
