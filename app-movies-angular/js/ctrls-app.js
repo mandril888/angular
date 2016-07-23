@@ -48,6 +48,7 @@ angular.module( 'allCtrls', [] )
 
 	.controller( 'nowPlayingMoviesCtrl' , function ( $scope, $rootScope, $http ) {
 
+		// global var to view in index navbar the actual page
 		$rootScope.section = "Now Playing Movies";
 
 		$scope.nowPlayingMovies = "";
@@ -63,6 +64,7 @@ angular.module( 'allCtrls', [] )
 
 	.controller( 'topRattedMoviesCtrl' , function ( $scope, $rootScope, $http ) {
 
+		// global var to view in index navbar the actual page
 		$rootScope.section = "Top Ratted Movies";
 
 		$scope.topRattedMovies = "";
