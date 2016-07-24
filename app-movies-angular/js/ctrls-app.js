@@ -21,11 +21,10 @@ angular.module( 'allCtrls', [] )
 
 		$scope.popularMovies = "";
 
-		var urlPopularMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&sort_by=popularity.desc';
+		var urlPopularMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&sort_by=revenue.desc';
 		$http.get( urlPopularMovies )
 			.then( function( dataPopularMovies ) {
 				$scope.popularMovies = dataPopularMovies.data.results;
-				console.log( $scope.popularMovies );
 			})
 	
 	})
@@ -37,11 +36,10 @@ angular.module( 'allCtrls', [] )
 
 		$scope.upcomingMovies = "";
 
-		var urlUpcomingMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&sort_by=release_date.desc';
+		var urlUpcomingMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&sort_by=original_title.asc';
 		$http.get( urlUpcomingMovies )
 			.then( function( dataUpcomingMovies ) {
 				$scope.upcomingMovies = dataUpcomingMovies.data.results;
-				console.log( $scope.upcomingMovies );
 			})
 	
 	})
@@ -53,11 +51,10 @@ angular.module( 'allCtrls', [] )
 
 		$scope.nowPlayingMovies = "";
 
-		var urlNowPlayingMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&sort_by=upcoming.desc';
+		var urlNowPlayingMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&sort_by=vote_count.desc';
 		$http.get( urlNowPlayingMovies )
 			.then( function( dataNowPlayingMovies ) {
 				$scope.nowPlayingMovies = dataNowPlayingMovies.data.results;
-				console.log( $scope.nowPlayingMovies );
 			})
 	
 	})
@@ -73,11 +70,29 @@ angular.module( 'allCtrls', [] )
 		$http.get( urlTopRattedMovies )
 			.then( function( dataTopRattedMovies ) {
 				$scope.topRattedMovies = dataTopRattedMovies.data.results;
-				console.log( $scope.topRattedMovies );
 			})
 	
 	})
 
+	.controller( 'infoMoviesCtrl' , function ( $scope, $rootScope, $http, $routeParams ) {
+
+		// global var to view in index navbar the actual page
+		$rootScope.section = "Info Movie";
+
+		$scope.idFilm = $routeParams;
+
+		$scope.infoMovies = "";
+
+		var urlInfoMovies = 'http://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4';
+		$http.get( urlInfoMovies )
+			.then( function( dataInfoMovies ) {
+				$scope.infoMovies = dataInfoMovies.data.results;
+				console.log( $scope.infoMovies );
+			})
+	
+	})
+
+	//this is a filter to highlight the words searched in the searching nav
 	.filter('highlight', function($sce) {
 	    return function(text, phrase) {
 	      if (phrase) text = text.replace(new RegExp('('+phrase+')', 'gi'),

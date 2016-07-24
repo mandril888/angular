@@ -34,20 +34,29 @@ p {	margin: 10px 0; }
 	text-decoration:none;
 }
 
-a {
+li a {
 	color: #d3d3d3;
 	text-decoration:none;
 	padding: 15px;
 }
 
-a:hover {
+li a:hover {
 	color: white;
-	text-decoration:none;
+	text-decoration: none;
 	padding-bottom: 5px;
 	border-bottom: 3px solid white;
 }
 
+strong a {
+	text-decoration: none;
+	color: #2a2a2a;
+}
 
+strong a:hover {
+	color: blue;
+	text-decoration: none;
+	transition: color 0s;
+}
 
 .imgDiv {
 	display: flex;
@@ -80,7 +89,7 @@ a:hover {
 
 	input.form-control { font-size: 20px; }
 
-	a, p { font-size: 18px; }
+	li a, p { font-size: 18px; }
 
 	.filmImg {
 		display: inline;

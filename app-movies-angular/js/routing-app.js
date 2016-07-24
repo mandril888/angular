@@ -27,6 +27,10 @@ angular.module( 'configRouting', [] )
 					templateUrl: '/templates/topRattedMovies.html',
 					controller: 'topRattedMoviesCtrl'
 				})
+				.when('/info/:movieName', {
+					templateUrl: '/templates/infoMovies.html',
+					controller: 'infoMoviesCtrl'
+				})
 				.otherwise({ redirectTo: '/' }); ;
 
 	})

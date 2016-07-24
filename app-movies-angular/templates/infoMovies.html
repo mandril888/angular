@@ -1,0 +1,16 @@
+
+<div class="container">
+
+	<p>{{idFilm.movieName}}</p>
+	
+	<div class="imgDiv">
+		<div ng-repeat="movies in infoMovies">
+			<img src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path }}" alt="">
+			<p><strong>Movie title:</strong><br>{{ movies.original_title }}</p>
+			<p><strong>Movie data release:</strong><br>{{ movies.release_date }}</p>
+			<p><strong>Movie overview:</strong><br>{{ movies.overview }}</p>
+			<p><strong>ID film:</strong><br>{{ movies.id }}</p>
+		</div>
+	</div>
+
+</div>

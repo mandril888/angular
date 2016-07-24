@@ -1,1 +1,1 @@
-angular.module( 'app-angular', [ 'ngRoute', 'allCtrls', 'configRouting'])
+angular.module( 'app-angular', [ 'ngRoute', 'allCtrls', 'configRouting' ])
