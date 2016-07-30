@@ -5,7 +5,6 @@
 
 1. Make a HTML document and insert Angular CDN, 'ng-app' to <html> tag and check that it works with a mathematical operation in the body (save it in the root):
 
-
 ~~~
     <!DOCTYPE html>
     <html lang="en" ng-app>
@@ -20,18 +19,156 @@
     </html>
 ~~~
 
+
 2. Think about the project and make folders to convert your project modular, then make different folders for:
 - the differents pages of the web (modules)
 - general JS
 - SASS
 - and a dist folder to compile with grunt the JSs and CSSs
 
+
 3. Create a Git and GitHub folder to save your project.
+
 
 4. Add the Gruntfile.js and package.json files in the root directory:
 - The package.json must contains the url of your project in GitHub and also all the pluguins that you need for the Gruntfile.js. Then you must install all the dependences (pluguins) in the root directory with the cmd:
  ~~~
- npm install
- npm install grunt --save-dev
+ npm install //in cmd
+ grunt  //in ruby
  ~~~
 - Gruntfile.js is used to configure and define tasks.
+
+
+5. Insert bootsrtap, and the js and css files created with grunt.
+
+~~~
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="dist/style.css.map">
+</head>
+<body>
+    <script src="dist/scripts.min.js"></script>
+</body>
+~~~
+
+
+
+###SASS
+
+1. Create a main file (styles.scss) to @import "xxx"; all the .scss files
+2. The .scss files imported must start whith `_`, to don't take care in the grunt compiling
+
+
+
+###HTML
+
+Make an html document for every page that you want to create and save it in the related module folder
+
+
+
+###JS
+
+####ANGULAR MODULES
+
+1. Create a main module (app.js) to insert all the dependences in JS folder, and related with the ng-app;
+
+~~~
+<!DOCTYPE html>
+<html lang="en" ng-app="myAngularWeb">
+~~~
+
+~~~
+angular.module( 'myAngularWeb', [ ] )
+~~~
+
+
+2. Then add the dependences of the main module (app.ja), that are the differents controllers, configurations and services.
+
+~~~
+angular.module( 'myAngularWeb', [ 'controllers', 'config', 'services', 'ngRoute', 'ngStorage' ] )
+~~~
+
+~~~
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+~~~
+
+I add ngRoute to aply the routes of the config, and the ngStorage to aply $localStorage.
+
+and create respective files the files in the JS folder :
+
+- controllers.js
+~~~
+angular.module( 'controllers', [ 'homeModule', 'aboutModule' ] )
+~~~
+
+- config.js
+~~~
+angular.module( 'config', [ ] )
+    .config( function( $routeProvider ){
+            $routeProvider
+                .when('/',{
+                    templateUrl: 'modules/home/home.html',
+                    controller: 'homeController'
+                })
+                .when('/home',{
+                    templateUrl: 'modules/home/home.html',
+                    controller: 'homeController'
+                })
+                .when('/about',{
+                    templateUrl: 'modules/about/about.html',
+                    controller: 'aboutController'
+                })
+                .otherwise({ redirectTo: '/' }); ;
+    })
+~~~
+
+- services
+~~~
+angular.module( 'services', [ 'homeService', 'aboutServices' ] );
+~~~
+
+
+3. Now create the differents controller modules related with the different pages:
+
+- homeModule.js
+~~~
+angular.module( 'homeModule', [ ] )
+    .controller( 'homeController' , function ( $scope, $localStorage, $routeParams, homeServices) {
+    })
+~~~
+
+- aboutModule.js
+~~~
+angular.module( 'aboutModule', [ ] )
+    .controller( 'aboutController' , function ( $scope, $localStorage, $routeParams, aboutServices) {
+    })
+~~~
+
+
+4. Now create the differents services related with the different pages:
+
+- homeService.js
+~~~
+angular.module( 'homeService', [ ] )
+    .factory('homeService', function($http) {
+        var urlOne = 'https://xxxxxxxx<SEARCH>';
+        function getInfo ( objToSearch ) {
+            var urlTwo = urlOne.replace('<SEARCH>', objToSearch)
+            return $http.get(urlTwo);
+        }
+        return {
+            getInfoBeer : getInfoBeer
+        }
+    })
+~~~
+
+- aboutService.js
+~~~
+angular.module( 'aboutService', [ ] )
+    .factory('aboutService', function($http) {
+    })
+~~~

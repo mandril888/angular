@@ -1,1 +1,1 @@
-angular.module( 'myOwnProject', [ ] )
+angular.module( 'myAngularWeb', [ 'controllers', 'config', 'services', 'ngRoute', 'ngStorage' ] )
