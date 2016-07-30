@@ -1,9 +1,7 @@
 
-#ANGULAR
+#Starting the project
 
-###Starting the project
-
-1. Make a HTML document and insert Angular CDN, 'ng-app' to <html> tag and check that it works with a mathematical operation in the body (save it in the root):
+**1.** Make a HTML document and insert Angular CDN, 'ng-app' to <html> tag and check that it works with a mathematical operation in the body (save it in the root):
 
 ~~~
     <!DOCTYPE html>
@@ -20,28 +18,29 @@
 ~~~
 
 
-2. Think about the project and make folders to convert your project modular, then make different folders for:
-- the differents pages of the web (modules)
-- general JS
-- SASS
-- and a dist folder to compile with grunt the JSs and CSSs
+**2.** Think about the project and make folders to convert your project modular, then make different folders for:
+>a. the differents pages of the web (modules)
+    b. general JS
+    c. SASS
+    d. and a dist folder to compile with grunt the JSs and CSSs
 
 
-3. Create a Git and GitHub folder to save your project.
+**3.** Create a Git and GitHub folder to save your project.
 
 
-4. Add the Gruntfile.js and package.json files in the root directory:
-- The package.json must contains the url of your project in GitHub and also all the pluguins that you need for the Gruntfile.js. Then you must install all the dependences (pluguins) in the root directory with the cmd:
+**4.** Add the Gruntfile.js and package.json files in the root directory:
+> a. The package.json must contains the url of your project in GitHub and also all the pluguins that you need for the Gruntfile.js. Then you must install all the dependences (pluguins) in the root directory with the cmd:
+
  ~~~
  npm install //in cmd
  grunt  //in ruby
  ~~~
-- Gruntfile.js is used to configure and define tasks.
+> b. Gruntfile.js is used to configure and define tasks.
 
 
-5. Insert jQuery CDN, bootsrtap CDN and the js and css files created with grunt:
+**5.** Insert jQuery CDN, bootsrtap CDN and the js and css files created with grunt:
 
-Be carefull with the order, always first the jQuery CDN!!
+*[X] Be carefull with the order, always first the jQuery CDN!!*
 ~~~
 <head>
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
@@ -58,25 +57,23 @@ Be carefull with the order, always first the jQuery CDN!!
 ~~~
 
 
+#SASS
 
-###SASS
-
-1. Create a main file (styles.scss) to @import "xxx"; all the .scss files.
-2. The .scss files imported must start whith `_` to don't take care in the grunt compiling.
-
+**1.** Create a main file (styles.scss) to @import "xxx"; all the .scss files.
+**2.** The .scss files imported must start whith `_` to don't take care in the grunt compiling.
 
 
-###HTML
+#HTML
 
 Make an html document for every page that you want to create and save it in the related module folder.
 
 
 
-###JS
+#JS
 
-####ANGULAR MODULES
+###ANGULAR MODULES
 
-1. Create a main module (app.js) to insert all the dependences in JS folder, and related with the ng-app;
+**1.** Create a main module (app.js) to insert all the dependences in JS folder, and related with the ng-app;
 
 ~~~
 <!DOCTYPE html>
@@ -88,9 +85,9 @@ angular.module( 'myAngularWeb', [ ] )
 ~~~
 
 
-2. Then add the dependences of the main module (app.ja), that are the differents controllers, configurations and services.
+**2.** Then add the dependences of the main module (app.ja), that are the differents controllers, configurations and services.
 
-Be carefull with the order of the dependences!!
+*[X] Be carefull with the order of the dependences!!*
 ~~~
 angular.module( 'myAngularWeb', [ 'ngRoute', 'controllers', 'config', 'ngStorage', 'services' ] )
 ~~~
@@ -100,9 +97,9 @@ angular.module( 'myAngularWeb', [ 'ngRoute', 'controllers', 'config', 'ngStorage
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
 ~~~
 
-I add ngRoute to aply the routes of the config, and the ngStorage to aply $localStorage.
+>I add ngRoute to aply the routes of the config, and the ngStorage to aply $localStorage.
 
-and create respective files the files in the JS folder :
+and create respective files in the JS folder :
 
 - controllers.js
 ~~~
@@ -136,7 +133,7 @@ angular.module( 'services', [ 'homeService', 'aboutService' ] );
 ~~~
 
 
-3. Now create the differents controller modules related with the different pages:
+**3.** Now create the differents controller modules related with the different pages:
 
 - homeModule.js
 ~~~
@@ -153,7 +150,7 @@ angular.module( 'aboutModule', [ ] )
 ~~~
 
 
-4. Now create the differents services related with the different pages:
+**4.** Now create the differents services related with the different pages:
 
 - homeService.js
 ~~~
