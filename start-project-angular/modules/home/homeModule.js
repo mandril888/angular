@@ -1,3 +1,3 @@
 angular.module( 'homeModule', [ ] )
-    .controller( 'homeController' , function ( $scope, $localStorage, $routeParams, homeServices) {
+    .controller( 'homeController' , function ( $scope, $http ) {
     })

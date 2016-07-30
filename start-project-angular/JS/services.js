@@ -1,1 +1,1 @@
-angular.module( 'services', [ 'homeService', 'aboutServices' ] );
+angular.module( 'services', [ 'homeService', 'aboutService' ] );

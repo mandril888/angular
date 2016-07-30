@@ -39,15 +39,18 @@
 - Gruntfile.js is used to configure and define tasks.
 
 
-5. Insert bootsrtap, and the js and css files created with grunt.
+5. Insert jQuery CDN, bootsrtap CDN and the js and css files created with grunt:
 
+Be carefull with the order, always first the jQuery CDN!!
 ~~~
 <head>
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="dist/style.css.map">
+    <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body>
     <script src="dist/scripts.min.js"></script>
@@ -58,14 +61,14 @@
 
 ###SASS
 
-1. Create a main file (styles.scss) to @import "xxx"; all the .scss files
-2. The .scss files imported must start whith `_`, to don't take care in the grunt compiling
+1. Create a main file (styles.scss) to @import "xxx"; all the .scss files.
+2. The .scss files imported must start whith `_` to don't take care in the grunt compiling.
 
 
 
 ###HTML
 
-Make an html document for every page that you want to create and save it in the related module folder
+Make an html document for every page that you want to create and save it in the related module folder.
 
 
 
@@ -87,8 +90,9 @@ angular.module( 'myAngularWeb', [ ] )
 
 2. Then add the dependences of the main module (app.ja), that are the differents controllers, configurations and services.
 
+Be carefull with the order of the dependences!!
 ~~~
-angular.module( 'myAngularWeb', [ 'controllers', 'config', 'services', 'ngRoute', 'ngStorage' ] )
+angular.module( 'myAngularWeb', [ 'ngRoute', 'controllers', 'config', 'ngStorage', 'services' ] )
 ~~~
 
 ~~~
@@ -128,7 +132,7 @@ angular.module( 'config', [ ] )
 
 - services
 ~~~
-angular.module( 'services', [ 'homeService', 'aboutServices' ] );
+angular.module( 'services', [ 'homeService', 'aboutService' ] );
 ~~~
 
 
@@ -137,14 +141,14 @@ angular.module( 'services', [ 'homeService', 'aboutServices' ] );
 - homeModule.js
 ~~~
 angular.module( 'homeModule', [ ] )
-    .controller( 'homeController' , function ( $scope, $localStorage, $routeParams, homeServices) {
+    .controller( 'homeController' , function ( $scope, $http, $localStorage, $routeParams, homeServices) {
     })
 ~~~
 
 - aboutModule.js
 ~~~
 angular.module( 'aboutModule', [ ] )
-    .controller( 'aboutController' , function ( $scope, $localStorage, $routeParams, aboutServices) {
+    .controller( 'aboutController' , function ( $scope, $http, $localStorage, $routeParams, aboutServices) {
     })
 ~~~
 
