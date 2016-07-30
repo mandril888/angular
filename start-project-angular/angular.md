@@ -26,7 +26,9 @@
 - SASS
 - and a dist folder to compile with grunt the JSs and CSSs
 
-3. Add the Gruntfile.js and package.json files in the root directory:
+3. Create a Git and GitHub folder to save your project.
+
+4. Add the Gruntfile.js and package.json files in the root directory:
 - The package.json must contains the url of your project in GitHub and also all the pluguins that you need for the Gruntfile.js. Then you must install all the dependences (pluguins) in the root directory with the cmd:
  ~~~
  npm install
