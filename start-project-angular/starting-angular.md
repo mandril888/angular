@@ -56,6 +56,11 @@
 </body>
 ~~~
 
+**6.** Add the meta info to take care the view ponit of small devices
+
+~~~
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+~~~
 
 #SASS
 
